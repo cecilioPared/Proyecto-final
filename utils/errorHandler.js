@@ -44,12 +44,11 @@ class InternalServerError extends BaseError {
 }
 
 const errorHandler = function (err, req, res, next) {
-  let error = err
-  const fieldTarget = ['message', 'metadata', 'httpStatusCode']
+  let error = err  
   if (!err instanceof BaseError) {
     error = new InternalServerError('Ah ocurrido un error desconocido', err)
   }
-  res.status(error.httpStatusCode).json(pick(error, fieldTarget))
+  res.status(error.httpStatusCode).json({statusCode: error.httpStatusCode, message: error.message})
 }
 
 module.exports = {

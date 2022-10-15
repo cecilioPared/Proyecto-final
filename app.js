@@ -1,8 +1,7 @@
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
-const producto = require('./routers/productos')
-const carrito = require('./routers/carritos')
+const routers = require('./routers')
 const { errorHandler } = require('./utils/errorHandler')
 
 const app = express()
@@ -14,7 +13,7 @@ app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use('/api', carrito,producto)
+app.use('/api', routers)
 app.use(errorHandler)
 
 

@@ -1,12 +1,10 @@
 const { Router } = require('express')
 const crear = require('./crear')
-// const actuaizar = require('./actualizar')
-// const obtener = require('./obtener')
-// const eliminar = require('./eliminar')
+const obtener = require('./obtener')
+const eliminar = require('./eliminar')
 
 const router = Router()
 
-//router.use('/carritos',obtener, crear, actuaizar,eliminar)
-router.use('/carrito', crear)
+router.use('/', crear,eliminar,obtener)
 
 module.exports = router

@@ -6,6 +6,6 @@ const eliminar = require('./eliminar')
 
 const router = Router()
 
-router.use('/productos',obtener, crear, actuaizar,eliminar)
+router.use('/',obtener, crear, actuaizar,eliminar)
 
 module.exports = router
