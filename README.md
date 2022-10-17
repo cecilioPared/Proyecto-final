@@ -21,3 +21,7 @@ Se utiliza un parametro en la cabecera de la llamada al endpoint `key:role` - `v
 ## Postman
 
 En el directorio raiz del proyecto se encuentra un archivo de colección  `Proyecto-final.postman_collection.json` con las configuraciones para poder probar los endpoint de la API. El mismo se debe importar desde postman.  
+
+## Url Glitch
+Para probar la Api publicada en produccion reemplazar en el archivo de  colección  `Proyecto-final.postman_collection.json` la url `localhost:8080` por 
+`https://cecilio-proyecto-final.glitch.me/`
