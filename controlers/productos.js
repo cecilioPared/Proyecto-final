@@ -47,11 +47,11 @@ class ProductosController {
     }
   }
 
-  static actualizarPorId(idProducto, data) {
+  static async actualizarPorId(idProducto, data) {
     const method = 'actualizarPorId'
     try {
       console.log(`${log}${method} intentando actualizar producto: ${idProducto}.`)
-      producto.actualizarPorId(idProducto, data)
+      await producto.actualizarPorId(idProducto, data)
       console.log(`${log} producto ${idProducto} actualizado con éxito.`)
     } catch (error) {
       console.log(`${log} Ah ocurrido un error: ${error.message}`)
@@ -59,11 +59,11 @@ class ProductosController {
     }
   }
 
-  static eliminarPorId(idProducto) {
+  static async eliminarPorId(idProducto) {
     const method = 'borrarPorId'
     try {
       console.log(`${log}${method} intentando borrar producto: ${idProducto}.`)
-      producto.eliminarPorId(idProducto)
+     await producto.eliminarPorId(idProducto)
       console.log(`${log} producto ${idProducto} borrado con éxito.`)
     } catch (error) {
       console.error(`${log} Ah ocurrido un error: ${error.message}`)

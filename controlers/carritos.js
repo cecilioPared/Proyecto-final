@@ -72,6 +72,19 @@ class CarritosController {
     }
   }
 
+  static async obtenerPorId(idCarrito) {
+    const method = 'obtenerPorId'
+    try {
+        console.log(`${log}${method} intentando obtener carrito ${idCarrito}.`)
+      const data = await carrito.obtenerPorId(idCarrito)
+      console.log(`${log}${method} carrito ${idCarrito} encontrado con éxito.`)
+      return data
+    } catch (error) {
+        console.log(`${log}${method} ocurrio un error: ${error.message}`)
+      throw error
+    }
+  }
+
 }
 
 
