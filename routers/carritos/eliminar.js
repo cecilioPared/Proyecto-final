@@ -1,23 +1,25 @@
 const { Router } = require('express')
 const CarritosController = require('../../controlers/carritos')
+const validarCarritoExiste  = require('../../middlewares/validar-carrito-existe')
+const validarProductoExiste  = require('../../middlewares/validar-producto-existe')
 
 const router = Router()
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id',validarCarritoExiste, async (req, res, next) => {
   try {
-    CarritosController.eliminarPorId(req.params.id)
+    await CarritosController.eliminarPorId(req.params.id)
     res.status(204).end()
   } catch (error) {
     next(error)
   }
 })
 
-router.delete('/:id/productos/:id_prod', (req, res, next) => {
+router.delete('/:id/productos/:id_prod',validarCarritoExiste,validarProductoExiste, async (req, res, next) => {
     try {
-      CarritosController.eliminarProductoCarrito(req.params.id,req.params.id_prod)
+      await CarritosController.eliminarProductoCarrito(req.params.id,req.params.id_prod)
       res.status(204).end()
     } catch (error) {
-      res.status(404).json({ error: error.message });
+      next(error)            
     }
   })
 
