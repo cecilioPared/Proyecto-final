@@ -11,8 +11,7 @@ class ProductosController {
     try {
     
       console.log(`${log}${method} intentando crear producto.`)
-      const result = await producto.crear(data)
-     // const producto = await producto.obtenerPorId(result.insertedId)
+      const result = await producto.crear(data)     
       console.log(`${log}${method} producto creado con éxito.`)
       return result
     } catch (error) {
