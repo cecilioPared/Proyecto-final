@@ -6,8 +6,8 @@ const router = Router()
 
 router.post('/',validarUsuario, validarProductos, async (req, res, next) => {
   try {
-    const producto = await ProductosController.crear(req.body)
-    res.status(201).json(producto)
+    const idProducto = await ProductosController.crear(req.body)
+    res.status(201).json(idProducto)
   } catch (error) {
     next(error)
   }

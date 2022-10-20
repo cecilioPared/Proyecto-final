@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const ProductosController = require('../../controlers/productos')
 const validarUsuario  = require('../../middlewares/validar-usuario')
-const validarProductoExiste  = require('../../middlewares/validar-producto-carrito')
+const validarProductoExiste  = require('../../middlewares/validar-producto-existe')
 const router = Router()
 
 router.delete('/:id',validarUsuario,validarProductoExiste, async (req, res, next) => {
