@@ -130,7 +130,7 @@ class Carrito {
       });
 
       if (indexProducto === -1) {
-        throw new Error(`Carrito con id ${idCarrito} no encontrado.`);
+        throw new Error(`Producto con id ${idProducto} no encontrado.`);
       }
 
       carrito.productos.splice(indexProducto, 1);

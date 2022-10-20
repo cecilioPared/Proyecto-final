@@ -14,6 +14,7 @@ class Producto {
       const data = await files.leerArchivo(this.path);
       data.push({ id,timestamp, ...nuevoProducto });
       await files.escribirArchivo(this.path, data);
+      return id;
     } catch (error) {
       console.log("Ocurrio un error durante la operación:", error);
       throw new Error(error.message);
